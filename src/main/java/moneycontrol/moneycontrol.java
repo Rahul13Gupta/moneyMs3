@@ -59,8 +59,13 @@ action.moveToElement(driver.findElement(By.linkText("Mutual Funds"))).build().pe
 driver.findElement(By.linkText("Top Ranked funds")).click();
 //step 10
 driver.findElement(By.className("robo_medium")).click();
-
-
-
+//step 11
+Set<String> str1 = driver.getWindowHandles();
+Iterator <String> it1=str1.iterator();
+String SSscreen=it1.next();
+String screen1=it1.next();
+driver.switchTo().window(screen1);
+WebElement atmc= driver.findElement(By.className("amt")); 
+System.out.println(atmc.getText());
 }
 }
